@@ -43,19 +43,19 @@ const slideInFromBottom = {
 const projects = [
   {
     id: 1,
-    title: "Admin Web App",
+    title: "Interactify CMS Dashboard",
     description: "dashboard provides a clean, user-friendly interface for tracking key metrics like user activity, campaign performance, and engagement analytics. It features charts and summary cards for quick insights and supports data-driven decision-making.",
     image: "/assets/Admin Home.svg",
     tags: ["UI/UX", "Mobile", "Figma"],
-    link: "https://example.com/ecommerce-app",
+    link: "https://www.figma.com/design/Qwfov0us3w1WqHQZ2HtfW7/Portfolio?node-id=4-9178&p=f&t=A46qXQ8paBXPwXvB-0",
   },
   {
     id: 2,
-    title: "Hollavox Mobile App",
-    description: "HollaVox is a mobile app that enables users to make international calls and send SMS messages worldwide. It offers competitive rates for global communication and provides virtual phone numbers from multiple countries",
+    title: "Connectivity Solutions",
+    description: "Cloud-based connectivity solution linking enterprise locations, IoT devices, SaaS applications, and external networks with secure, scalable routing.",
     image: "/assets/cloud.svg",
     tags: ["UI/UX", "Mobile", "Figma"],
-    link: "https://example.com/saas-dashboard",
+    link: "https://www.figma.com/design/Qwfov0us3w1WqHQZ2HtfW7/Portfolio?node-id=4-14800&p=f&t=A46qXQ8paBXPwXvB-0",
   },
   {
     id: 3,
@@ -63,22 +63,22 @@ const projects = [
     description: "Rivas is a sleek, responsive movie streaming site designed for a smooth and engaging user experience. It features categorized content, fast loading, and a modern UI, offering users an experience similar to Netflix.",
     image: "/assets/rivas.svg",
     tags: ["UI/UX", "Mobile", "Figma"],
-    link: "https://example.com/brand-identity",
+    link: "https://www.figma.com/design/Qwfov0us3w1WqHQZ2HtfW7/Portfolio?node-id=0-1&p=f&t=A46qXQ8paBXPwXvB-0",
   },
   {
     id: 4,
-    title: "Dedicated internet Access Web App",
-    description: "Designed a clean, user-friendly interface for a Dedicated Internet Access platform, featuring real-time bandwidth monitoring, SLA metrics, usage analytics, and easy service management for enterprise users.",
-    image: "/assets/dia.svg",
+    title: "E-Commerce web",
+    description: "A clean user friendly e-commerce website with product listings, secure checkout, user authentication, and order management",
+    image: "/assets/ecommerce.svg",
     tags: ["UI/UX", "Mobile", "Figma"],
-    link: "https://example.com/banking-app",
+    link: "https://www.figma.com/design/Qwfov0us3w1WqHQZ2HtfW7/Portfolio?node-id=6-20744&p=f&t=A46qXQ8paBXPwXvB-0",
   },
 ]
 
 const skills = [
   { name: "UI/UX Design", level: 95, color: "from-pink-500 to-rose-500" },
   { name: "Figma", level: 90, color: "from-purple-500 to-indigo-500" },
-  { name: "Adobe Creative Suite", level: 85, color: "from-blue-500 to-cyan-500" },
+  { name: "Adobe XD", level: 85, color: "from-blue-500 to-cyan-500" },
   { name: "Prototyping", level: 88, color: "from-emerald-500 to-teal-500" },
   { name: "User Research", level: 82, color: "from-yellow-500 to-orange-500" },
   { name: "Frontend Development", level: 75, color: "from-red-500 to-pink-500" },
@@ -353,7 +353,7 @@ export default function Portfolio() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.1 + index * 0.1, duration: 0.3 }}
                           >
-                            <a
+                            <motion.a
                               href={`#${item.id}`}
                               onClick={() => setIsMobileMenuOpen(false)}
                               whileHover={{
@@ -372,7 +372,7 @@ export default function Portfolio() {
                                 className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"
                               />
                               <span>{item.name}</span>
-                            </a>
+                            </motion.a>
                           </motion.li>
                         ))}
                       </ul>
@@ -540,12 +540,13 @@ export default function Portfolio() {
                     About Me
                   </motion.h2>
                   <motion.p variants={fadeInLeft} className="text-blue-700 mb-6 leading-relaxed">
-                    I'm a passionate UI/UX designer with 5+ years of experience creating digital products that solve
+                    I'm a passionate UI/UX designer with 3+ years of experience creating digital products that solve
                     real problems. I believe great design is invisible – it just works.
                   </motion.p>
                   <motion.p variants={fadeInLeft} className="text-blue-700 mb-8 leading-relaxed">
-                    When I'm not designing, you can find me exploring new technologies, reading design blogs, or hiking
-                    in nature for inspiration.
+                    When I'm not designing, you can find me exploring new technologies, reading, or enjoying the beauty
+                    of the outdoors. I draw a lot of my design inspiration from the world around me.
+    
                   </motion.p>
                   <motion.div variants={fadeInLeft} className="flex space-x-4">
                     {[
@@ -738,7 +739,7 @@ export default function Portfolio() {
                           viewport={{ once: true }}
                           className="mt-4 pt-4 border-t border-slate-200"
                         >
-                          <a
+                          <motion.a
                             href={project.link}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -753,7 +754,7 @@ export default function Portfolio() {
                             >
                               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                             </motion.div>
-                          </a>
+                          </motion.a>
                         </motion.div>
                       </CardContent>
                     </Card>
@@ -966,13 +967,13 @@ export default function Portfolio() {
               viewport={{ once: true }}
               className="text-slate-400 relative z-10"
             >
-              © 2024 Your Name. Designed and built with{" "}
+              © 2025 Bencollins Azubuike. All rights reserved.
               <motion.span
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY }}
                 className="text-red-400"
               >
-                ❤️
+                
               </motion.span>
             </motion.p>
           </motion.footer>
