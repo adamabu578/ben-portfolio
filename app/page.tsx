@@ -44,7 +44,7 @@ const projects = [
   {
     id: 1,
     title: "Interactify CMS Dashboard",
-    description: "dashboard provides a clean, user-friendly interface for tracking key metrics like user activity, campaign performance, and engagement analytics. It features charts and summary cards for quick insights and supports data-driven decision-making.",
+    description: "A clean, user-friendly interface for tracking key metrics like user activity, campaign performance, and engagement analytics.",
     image: "/assets/Admin Home.svg",
     tags: ["UI/UX", "Mobile", "Figma"],
     link: "https://www.figma.com/design/Qwfov0us3w1WqHQZ2HtfW7/Portfolio?node-id=4-9178&p=f&t=A46qXQ8paBXPwXvB-0",
@@ -60,7 +60,7 @@ const projects = [
   {
     id: 3,
     title: "Rivas Web App",
-    description: "Rivas is a sleek, responsive movie streaming site designed for a smooth and engaging user experience. It features categorized content, fast loading, and a modern UI, offering users an experience similar to Netflix.",
+    description: "Rivas is a sleek, responsive movie streaming site with a modern UI for a smooth and engaging user experience, offering users an experience similar to Netflix.",
     image: "/assets/rivas.svg",
     tags: ["UI/UX", "Mobile", "Figma"],
     link: "https://www.figma.com/design/Qwfov0us3w1WqHQZ2HtfW7/Portfolio?node-id=0-1&p=f&t=A46qXQ8paBXPwXvB-0",
@@ -658,7 +658,7 @@ Through intuitive interfaces, thoughtful interactions, and human-centered soluti
                     }}
                     className="group"
                   >
-                    <Card className="overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-300 bg-white/80 backdrop-blur-sm">
+                    {/* <Card className="overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-300 bg-white/80 backdrop-blur-sm">
                       <div className="relative overflow-hidden">
                         <motion.div whileHover={{ scale: 1.1 }} transition={{ duration: 0.4 }}>
                           <Image
@@ -757,7 +757,117 @@ Through intuitive interfaces, thoughtful interactions, and human-centered soluti
                           </motion.a>
                         </motion.div>
                       </CardContent>
-                    </Card>
+                    </Card> */}
+
+                    <Card
+                  className="flex flex-col h-[500px] w-full" // fixed height, flex column layout
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.4 }}
+                    className="relative"
+                  >
+                    <Image
+                      src={project.image || "/placeholder.svg"}
+                      alt={project.title}
+                      width={400}
+                      height={300}
+                      className="w-full h-64 object-cover"
+                    />
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileHover={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute inset-0 bg-black/20 flex items-end"
+                    >
+                      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                        <Button
+                          variant="secondary"
+                          size="sm"
+                          className="m-4 bg-white/95 text-slate-800 hover:bg-white"
+                          onClick={() => window.open(project.link, "_blank")}
+                        >
+                          <ExternalLink className="h-4 w-4 mr-2" />
+                          View Project
+                        </Button>
+                      </motion.div>
+                    </motion.div>
+                  </motion.div>
+
+                  <CardContent className="flex flex-col flex-grow p-6">
+                    <motion.h3
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="text-xl font-semibold text-slate-800 mb-2"
+                    >
+                      {project.title}
+                    </motion.h3>
+
+                    <motion.p
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 + 0.1 }}
+                      viewport={{ once: true }}
+                      className="text-slate-600 mb-4 flex-grow"
+                    >
+                      {project.description}
+                    </motion.p>
+
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+                      viewport={{ once: true }}
+                      className="flex flex-wrap gap-2"
+                    >
+                      {project.tags.map((tag, tagIndex) => (
+                        <motion.span
+                          key={tag}
+                          initial={{ opacity: 0, scale: 0 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{
+                            duration: 0.3,
+                            delay: index * 0.1 + tagIndex * 0.05 + 0.3,
+                            ease: "backOut",
+                          }}
+                          viewport={{ once: true }}
+                          whileHover={{ scale: 1.1 }}
+                          className="px-3 py-1 bg-cyan-100 text-blue-600 rounded-full text-sm cursor-default shadow-md"
+                        >
+                          {tag}
+                        </motion.span>
+                      ))}
+                    </motion.div>
+
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+                      viewport={{ once: true }}
+                      className="mt-4 pt-4 border-t border-slate-200"
+                    >
+                      <motion.a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.02, x: 5 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors group"
+                      >
+                        <span>View Project</span>
+                        <motion.div
+                          animate={{ x: [0, 3, 0] }}
+                          transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
+                        >
+                          <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        </motion.div>
+                      </motion.a>
+                    </motion.div>
+                  </CardContent>
+                </Card>
+
                   </motion.div>
                 ))}
               </motion.div>
