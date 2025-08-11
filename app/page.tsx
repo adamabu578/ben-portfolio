@@ -248,7 +248,7 @@ export default function Portfolio() {
                 whileTap={{ scale: 0.95 }}
                 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent cursor-pointer"
               >
-                Portfolio
+                Beyond Pixels
               </motion.a>
 
               {/* Desktop Menu */}
@@ -440,7 +440,7 @@ export default function Portfolio() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                   >
-                    Creative{" "}
+                    Pixels {""}
                   </motion.span>
                   <motion.span
                     initial={{ opacity: 0, scale: 0.5 }}
@@ -448,13 +448,13 @@ export default function Portfolio() {
                     transition={{ duration: 0.8, delay: 0.5, ease: "backOut" }}
                     className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
                   >
-                    Designer
+                   with Purpose
                   </motion.span>
                 </motion.h1>
 
                 <motion.p variants={fadeInUp} className="text-xl text-slate-700 mb-8 max-w-2xl mx-auto">
-                  I craft beautiful and functional digital experiences that users love. Specializing in UI/UX design and
-                  frontend development.
+                 In a world where every pixel tells a story, I design experiences that go beyond the screen.
+Through intuitive interfaces, thoughtful interactions, and human-centered solutions, I bridge the gap between users and technology.
                 </motion.p>
 
                 <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
