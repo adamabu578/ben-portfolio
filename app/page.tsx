@@ -476,6 +476,7 @@ Through intuitive interfaces, thoughtful interactions, and human-centered soluti
                   </motion.div>
 
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <a href="resume.pdf" download>
                     <Button
                       variant="outline"
                       size="lg"
@@ -489,6 +490,7 @@ Through intuitive interfaces, thoughtful interactions, and human-centered soluti
                       </motion.div>
                       Download Resume
                     </Button>
+                    </a>
                   </motion.div>
                 </motion.div>
 
