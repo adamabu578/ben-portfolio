@@ -69,7 +69,7 @@ const projects = [
     id: 4,
     title: "E-Commerce web",
     description: "A clean user friendly e-commerce website with product listings, secure checkout, user authentication, and order management",
-    image: "/assets/ecommerce.svg",
+    image: "/assets/storeimg.svg",
     tags: ["UI/UX", "Mobile", "Figma"],
     link: "https://www.figma.com/design/Qwfov0us3w1WqHQZ2HtfW7/Portfolio?node-id=6-20744&p=f&t=A46qXQ8paBXPwXvB-0",
   },
